@@ -171,7 +171,7 @@ export default {
             url:'/api/updatescore',
             method:"put",
             data:{
-              
+              ...this.user
             }
           })
         }

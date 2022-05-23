@@ -91,4 +91,11 @@ routers.put(`/updateuser`,(req,res)=>{
         }
     })
 })
+//更新分数
+routers.put(`/updatescore`,(req,res)=>{
+    let id =req.body.id;
+    let score=req.body.score;
+    let sql = $sql.user.updatescore;
+    console.log(req.body)
+})
 module.exports=routers;
