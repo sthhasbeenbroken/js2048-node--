@@ -8,6 +8,16 @@
         </div>
          <div class="main">
             <el-table class="tbl" :data="Data">
+            <el-table-column  type="index" align="center" :resizable="false" label="名次" width="100">
+                <template slot-scope="scope">
+                      <span v-if="scope.$index+1 ==1"><img class="manImg" src="../assets/champion.png" style="width:48px;height:48px"></span>
+                      <span v-else-if="scope.$index+1 ==2"><img class="manImg" src="../assets/runner-up2.png" style="width:48px;height:48px"> </span>
+                      <!-- <span v-else-if="scope.$index+1 ==3"><img class="manImg" src="../../assets/33.png"> </span> -->
+                      <span v-else class="no">{{scope.$index+1}} </span>
+                  </template>
+
+            </el-table-column>
+
              <el-table-column label="账号" prop="userid" ></el-table-column>
              <el-table-column label="名称" prop="username"></el-table-column>
              <el-table-column label="分数" prop="score"></el-table-column>
@@ -15,6 +25,39 @@
          </div>
     </div>
 </template>
+<script>
+export default {
+     data(){
+        return{
+            Data:[],
+            dialogVisible: false,
+        }
+    },
+    created(){
+           this.getUserInfo();
+       }
+
+    ,
+    methods:{
+        getUserInfo(){
+            this.$axios({
+               url:`/api/rank`,
+               method:'get',
+               data:{
+                   ...this.Data
+               }
+           }).then(res=>{               
+               let resData = res.data
+               //for(let i=0;i<resData.msg.length;i++)
+               this.Data=(resData.msg)
+           // console.log(this.Data)
+           }).catch(function(err){
+               console.log("连接失败",err)
+           })
+        },
+}
+}
+</script>
 <style lang="scss" scoped>
   .nag{
         padding: 7px;

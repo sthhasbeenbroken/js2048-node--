@@ -7,7 +7,7 @@ var sqlMap={
         updateuser:"update userinfo set username=?,status=?,password=?,baned=? where userid=?",
         deleteuser:"delete from userinfo where userid = ?",
         searchuser:"select * from userinfo where userid=?",
-        rank:"SELECT * FROM userinfo WHERE status="+'user'+"ORDER BY score",
+        rank:"SELECT * FROM userinfo WHERE status= 'user' ORDER BY score",
         updatescore:"update userinfo set score=? where userid=?",
     }
 }

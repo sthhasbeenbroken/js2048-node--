@@ -119,7 +119,20 @@ routers.put(`/updatescore`,(req,res)=>{
     console.log(req.body)
 })
 //rank
-routers.post(`/rank`,(req,res)=>{
-    console.log(req.body)
+routers.get(`/rank`,(req,res)=>{
+    let sql = $sql.user.rank;
+    connection.query(sql,(err,result,filed)=>{
+       // console.log(result)
+        if(err){
+            return "RankFail";
+        }else{
+        var dataString = JSON.stringify(result);
+        var data=JSON.parse(dataString);
+        
+        res.json({
+            msg:data
+        })
+        }
+    })
 })
 module.exports=routers;
