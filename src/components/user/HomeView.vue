@@ -12,9 +12,9 @@
           <div class="rank">
               排
           </div>
-          <div class="other">
+          <!-- <div class="other">
               無
-          </div>
+          </div> -->
         </div>
     </div>
 </template>

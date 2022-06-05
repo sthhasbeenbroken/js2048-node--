@@ -44,6 +44,7 @@ routers.get("/findAll",(req,res)=>{
 routers.get("/searchuser/:id",(req,res)=>{
     let sql =$sql.user.searchuser;
     let id=req.params.id
+    console.log(id)
     connection.query(sql,[id],(err,result,filed)=>{
         if(err){
             return "Fail";
@@ -53,6 +54,25 @@ routers.get("/searchuser/:id",(req,res)=>{
         res.json({
             data:data
         })
+        }
+    })
+  })
+//新增
+routers.post(`/insert`,(req,res)=>{
+    let sql =$sql.user.insertuser;
+    let id =req.body.userid
+    let name=req.body.username
+    let password = req.body.password
+    let status=req.body.status
+    let baned=req.body.baned
+    let score =req.body.score
+    console.log(req.body)
+    connection.query(sql,[id,name,password,status,baned,score],(err,result,filed)=>{
+        if(err){
+            return 'insert Fail'
+        }
+        else{
+            res.json(result)
         }
     })
   })
@@ -96,6 +116,10 @@ routers.put(`/updatescore`,(req,res)=>{
     let id =req.body.id;
     let score=req.body.score;
     let sql = $sql.user.updatescore;
+    console.log(req.body)
+})
+//rank
+routers.post(`/rank`,(req,res)=>{
     console.log(req.body)
 })
 module.exports=routers;

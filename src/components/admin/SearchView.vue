@@ -11,6 +11,8 @@
              <el-table-column label="名称" prop="username"></el-table-column>
              <el-table-column label="身份" prop="status"></el-table-column>
              <el-table-column label="封禁" prop="baned"></el-table-column>
+             <el-table-column label="分数" prop="score"></el-table-column>
+             
              <el-table-column label="编辑" > 
                 <template slot-scope="scope">
                   <el-button @click="edit(scope.row.userid)" type="primary" size="mini">编辑</el-button>                      
@@ -39,7 +41,7 @@
             <el-input  name="status" v-model="form.status"></el-input>
           </el-form-item>
           <el-form-item label="封禁">
-            <el-input  name="banded" v-model="form.baned"></el-input>
+            <el-input  name="baned" v-model="form.baned"></el-input>
           </el-form-item>
           <el-form-item label="分数">
             <el-input  name="score" v-model="form.score"></el-input>

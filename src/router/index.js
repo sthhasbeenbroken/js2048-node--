@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'login',
     component: Login
   },
   {
@@ -19,12 +19,20 @@ const routes = [
       component:()=>import('@/components/admin/SearchView')
   },
   {
+    path:'/insert',
+    component:()=>import('@/components/admin/InsertView')
+  },
+  {
     path:'/user',
     component:()=>import('@/components/user/HomeView')
   },
   {
     path:'/2048',
     component:()=>import('@/components/user/GameView')
+  },
+  {
+    path:'/rank',
+    component:()=>import('@/components/RankView')
   }
 
 ]

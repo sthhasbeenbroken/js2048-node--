@@ -9,10 +9,10 @@
           <div class="search" @click="tosearch">
               查
           </div>
-          <div class="insert">
+          <div class="insert" @click="toInsert">
               增
           </div>
-          <div class="rank">
+          <div class="rank" @click="torank">
               排
           </div>
 
@@ -45,6 +45,16 @@ export default {
                path:'/search'
            })
        },
+        toInsert(){
+            this.$router.push({
+                path:'/insert'
+            })
+        },
+        torank(){
+            this.$router.push({
+                path:'/rank'
+            })
+        },
         exit(){
         this.$router.push({
             path:'/'
