@@ -12,12 +12,15 @@
                 <template slot-scope="scope">
                       <span v-if="scope.$index+1 ==1"><img class="manImg" src="../assets/champion.png" style="width:48px;height:48px"></span>
                       <span v-else-if="scope.$index+1 ==2"><img class="manImg" src="../assets/runner-up2.png" style="width:48px;height:48px"> </span>
-                      <!-- <span v-else-if="scope.$index+1 ==3"><img class="manImg" src="../../assets/33.png"> </span> -->
+                      <span v-else-if="scope.$index+1 ==3"><img class="manImg" src="../assets/thrid.png" style="width:48px;height:48px"> </span>
                       <span v-else class="no">{{scope.$index+1}} </span>
                   </template>
-
+            </el-table-column> 
+             <el-table-column label="头像"  >
+            <template slot-scope="scope">
+          <img class="manImg" :src=scope.row.profilephoto style="width:48px;height:48px">
+            </template>
             </el-table-column>
-
              <el-table-column label="账号" prop="userid" ></el-table-column>
              <el-table-column label="名称" prop="username"></el-table-column>
              <el-table-column label="分数" prop="score"></el-table-column>
