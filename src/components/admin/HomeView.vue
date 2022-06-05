@@ -12,18 +12,10 @@
           <div class="insert">
               增
           </div>
-          <div class="delete">
-              删
-          </div>
-          <div class="update">
-              改
-          </div>
           <div class="rank">
               排
           </div>
-          <div class="other">
-              無
-          </div>
+
         </div>
     </div>
 </template>

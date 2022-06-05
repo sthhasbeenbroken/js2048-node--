@@ -41,6 +41,9 @@
           <el-form-item label="封禁">
             <el-input  name="banded" v-model="form.baned"></el-input>
           </el-form-item>
+          <el-form-item label="分数">
+            <el-input  name="score" v-model="form.score"></el-input>
+          </el-form-item>
         </el-form>
       </section>
       <span slot="footer" class="dialog-footer">
@@ -63,6 +66,7 @@ export default {
                 status:'',
                 userid:'',
                 baned:'',
+                score:'',
             },
             dialogVisible: false,
         }
