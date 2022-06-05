@@ -9,7 +9,7 @@
           <div class="search" @click="to2048">
               2048
           </div>
-          <div class="rank">
+          <div class="rank" @click="torank">
               排
           </div>
           <!-- <div class="other">
@@ -42,6 +42,11 @@ export default {
         to2048(){
            this.$router.push({
                path:'/2048'
+           })
+       },
+       torank(){
+           this.$router.push({
+               path:'/rank'
            })
        },
         exit(){

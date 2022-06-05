@@ -68,14 +68,15 @@ export default {
       isNewRndItem: false, //   // 是否产生新元素,
       dbmaxScore:0,
       user:{
-
+          userid:'',
       }
     }
   },
   created () {
     this.gameList = this.matrix(5, 5, null)
     // 游戏初始化
-
+    this.user.userid = this.$cookies.get("cid");
+    //console.log(this.user.userid)
     this.dbmaxScore=this.$cookies.get("score");
     this.gameInit()
   },
