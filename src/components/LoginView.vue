@@ -46,6 +46,7 @@ export default {
                         this.$cookies.set("cname", resData.msg[0].username)
                         this.$cookies.set("cid", resData.msg[0].userid)
                         this.$cookies.set("role",resData.msg[0].status)
+                        this.$cookies.set("profilephoto",resData.msg[0].profilephoto)
                         this.$router.push({
                         path:'/admin'})
                       break
@@ -54,6 +55,7 @@ export default {
                         this.$cookies.set("cid", resData.msg[0].userid)
                         this.$cookies.set("role",resData.msg[0].status)
                         this.$cookies.set('score',resData.msg[0].score)
+                        this.$cookies.set("profilephoto",resData.msg[0].profilephoto)
                         this.$router.push({
                         path:'/user'})
                       break

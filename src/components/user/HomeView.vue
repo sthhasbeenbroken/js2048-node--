@@ -1,7 +1,7 @@
 <template>
     <div class="admin">
         <div class="nag">
-            <img src="@/assets/logo.png">
+            <img :src="require('@/assets/'+this.user.profilephoto)">
             <span>{{this.user.username}}</span>
             <el-button round size="small" @click="exit">退出</el-button>
         </div>
@@ -25,6 +25,7 @@ export default {
             user:{
                 username:null,
                 userid:null,
+                profilephoto:'',
             }
         }
     },
@@ -35,9 +36,11 @@ export default {
         getUserInfo() { //获取用户信息
         let userName = this.$cookies.get("cname")
         let userId = this.$cookies.get("cid")
+        let profilephoto=this.$cookies.get("profilephoto")
         this.user.username = userName
         this.user.userid = userId
-        //console.log(this.user);
+        this.user.profilephoto=profilephoto
+        console.log(this.user.profilephoto);
         },
         to2048(){
            this.$router.push({

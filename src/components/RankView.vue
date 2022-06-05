@@ -8,7 +8,7 @@
         </div>
          <div class="main">
             <el-table class="tbl" :data="Data">
-            <el-table-column  type="index" align="center" :resizable="false" label="名次" width="100">
+            <el-table-column  type="index" align="center" :resizable="false" label="名次" width="80">
                 <template slot-scope="scope">
                       <span v-if="scope.$index+1 ==1"><img class="manImg" src="../assets/champion.png" style="width:48px;height:48px"></span>
                       <span v-else-if="scope.$index+1 ==2"><img class="manImg" src="../assets/runner-up2.png" style="width:48px;height:48px"> </span>
@@ -16,9 +16,9 @@
                       <span v-else class="no">{{scope.$index+1}} </span>
                   </template>
             </el-table-column> 
-             <el-table-column label="头像"  >
+             <el-table-column label="头像" class="photo">
             <template slot-scope="scope">
-          <img class="manImg" :src=scope.row.profilephoto style="width:48px;height:48px">
+          <img class="manImg" :src=scope.row.profilephoto style="width:48px;height:48px;border-radius:50%">
             </template>
             </el-table-column>
              <el-table-column label="账号" prop="userid" ></el-table-column>
@@ -79,6 +79,7 @@ export default {
            font-size: 20px;
        }
     }
+
   .ranklist {
     margin-left: 150px;
     font-size: 28px;
