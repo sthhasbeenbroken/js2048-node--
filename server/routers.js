@@ -117,6 +117,14 @@ routers.put(`/updatescore`,(req,res)=>{
     let score=req.body.score;
     let sql = $sql.user.updatescore;
     console.log(req.body)
+    connection.query(sql,[score,id],(err,result,filed)=>{
+        if(err){
+            return 'update Fail'
+        }
+        else{
+            res.json(result)
+        }
+    })
 })
 //rank
 routers.get(`/rank`,(req,res)=>{
