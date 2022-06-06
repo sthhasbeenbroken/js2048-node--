@@ -2,7 +2,7 @@
 
 # **实 验 报 告**
 
-![zucc](zucc.png "ZUCC")
+![1654487127403.png](image/proj.final/1654487127403.png)
 
 - 课程名称:跨平台脚本开发技术
 - 实验项目:  期末大作业
@@ -43,7 +43,24 @@
 4. 项目说明
 
    1. 项目 是独立开发
-   2. 分为前端与后端，后端通过nodejs结合express框架来实现数据传递，
+   2. 分为前端与后端，后端通过nodejs结合express框架与mysql框架，来实现从数据库获取数据，并且传递给前端。前端通过vue中el-ui来进行编写。通过其axios获取后端提供的数据。其中前端分为管理员与用户两个方面，用户中2048游戏代码参考了网络上部分的2048教程。
+   3. 后端：项目目录![img](image/proj.final/1654485407947.png)
+
+      ```
+      app.js 主启动程序 mysql.js 数据库连接 routers.js各个路由 sqlMap.js 
+      ```
+   4. 前端：项目目录![img](image/proj.final/1654485586029.png)![img](image/proj.final/1654485609991.png)
+
+      ```
+      js文件夹：rem.js设置设备rem宽高,touch.js触摸屏幕相应动作，其余为头像与icon库
+      vue文件夹：assets：图片，components：组件页面，LoginView：登录界面，RankView：排行表，router：路由，admin：管理员页面自上而下分别为HomeView：主页，InsertView：插入新用户,SearchView：查找用户（包含删改）user：GameView：2048页面 HomeView：主页
+      ```
+   5. 前端启动：`npm run serve`
+
+      ![img](image/proj.final/1654485366221.png)
+   6. 后端启动：`node app.js`
+
+      ![img](image/proj.final/1654485338292.png)
 5. 解决技术要点说明
 
    - 解决 xxx 问题1， 关键代码与步骤如下

@@ -22,12 +22,12 @@
         </div>
       </div>
     </div>
-    <div class="gameDirection">
+    <!-- <div class="gameDirection">
       <span @click="move('up')">上</span>
       <span @click="move('down')">下</span>
       <span @click="move('left')">左</span>
       <span @click="move('right')">右</span>
-    </div>
+    </div> -->
     <div class="scoreAndRefresh">
       <div class="gameScore ">
         得分：<span id="gameScore">{{ gameScore }}</span> 分
