@@ -9,6 +9,7 @@ var sqlMap={
         searchuser:"select * from userinfo where userid=?",
         rank:"SELECT * FROM userinfo WHERE status= 'user' ORDER BY score desc",
         updatescore:"update userinfo set score=? where userid=?",
+        updateimg:"update userinfo set profilephoto=? where userid=?",
     }
 }
 module.exports=sqlMap;

@@ -126,6 +126,23 @@ routers.put(`/updatescore`,(req,res)=>{
         }
     })
 })
+//换头像
+routers.post(`/updateimg`,(req,res)=>{
+    let id =req.body.userid;
+    let profilephoto=req.body.profilephoto;
+    let sql = $sql.user.updateimg;
+    console.log(req.body)
+    console.log(id)
+    console.log(profilephoto)
+    connection.query(sql,[profilephoto,id],(err,result,filed)=>{
+        if(err){
+            return 'update Fail'
+        }
+        else{
+            res.json(result)
+        }
+    })
+})
 //rank
 routers.get(`/rank`,(req,res)=>{
     let sql = $sql.user.rank;
